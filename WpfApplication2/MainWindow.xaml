@@ -1,0 +1,122 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        WindowStyle = "ThreeDBorderWindow"
+        WindowState = "Maximized">   
+
+    <Window.CommandBindings>
+        <CommandBinding Command="NavigationCommands.GoToPage" Executed="GoToPageExecuteHandler" CanExecute="GoToPageCanExecuteHandler" />
+    </Window.CommandBindings>    
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.84*" />
+            <RowDefinition Height="0.08*" />
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Top" Grid.Row="0">
+            <Image Source="/WpfApplication2;component/Images/Chrysanthemum.jpg" Height="30" Name="image1" Stretch="Fill" HorizontalAlignment="Left" Margin="20,0,0,0" Width="139" DataContext="{Binding}" />
+            <Label Content="SR Sales" Height="Auto" Name="label1" HorizontalAlignment="Right" VerticalAlignment="Center" FontWeight="Bold" Margin="0,0,20,0" FontSize="18.667"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".2*" />               
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Mill" HorizontalAlignment="Stretch" Name="button1" VerticalAlignment="Stretch" />
+            <Button Grid.Column="1" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Technology" HorizontalAlignment="Stretch" Name="button2" VerticalAlignment="Stretch" />
+            <Button Grid.Column="2" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Information" HorizontalAlignment="Stretch" Name="button3" VerticalAlignment="Stretch" />
+            <Button Grid.Column="3" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Clintele" HorizontalAlignment="Stretch" Name="button4" VerticalAlignment="Stretch" />
+
+            <Button  Grid.Column="4" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Support" HorizontalAlignment="Stretch" Name="button5" VerticalAlignment="Stretch" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop Color="#FF000000" Offset="1"/>
+                            <GradientStop Color="#FFFFFFFF"/>
+                        </LinearGradientBrush>
+                    </Button.Background>           
+                </Button>
+
+            <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="1" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="2" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="3" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="4" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".8*" />
+            </Grid.ColumnDefinitions>
+            <Border  Grid.Column="0" BorderThickness="1" CornerRadius="3,3,0,0" Margin="5,5,0,0" BorderBrush="Black">
+                <TextBlock Grid.Column="0">
+                <TextBlock.Background>
+                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                         <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                         <GradientStop Color="#FF000000"/>
+                     </LinearGradientBrush>
+                </TextBlock.Background>
+            </TextBlock>
+            </Border>
+            <Border  Grid.Column="1" BorderThickness="1" CornerRadius="3,3,0,0" Margin="0,5,5,0" BorderBrush="Black">
+            <TextBlock Grid.Column="1">
+                 
+               <TextBlock.Background>
+                  <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                      <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                         <GradientStop Color="#FF000000"/>
+                   </LinearGradientBrush>
+               </TextBlock.Background>
+                 
+            </TextBlock>
+            </Border>
+           
+        </Grid>
+
+        <Border Grid.Row="3" Margin="5 0 5 5">
+            <Grid  >
+           
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".2*" />
+                    <ColumnDefinition Width=".8*" />
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="2" CornerRadius="0 0 3 3" Margin="0 0 3 0">
+                    <Grid Background="Beige" Grid.Column="0">
+                        <TextBlock  Text="Rahul" Margin="0,0,-6,0"></TextBlock>
+                    </Grid>                    
+                </Border>
+
+                <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2"  CornerRadius="0 0 3 3"  Margin="-4 0 0 0">
+                    <Grid Grid.Column="1">                       
+                        <Frame NavigationUIVisibility="Hidden" Name="frmContent" Source="Page/Page1.xaml" />
+                    </Grid>
+                </Border>
+           
+        </Grid>
+        </Border>
+        
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".8*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Quick Notes" HorizontalAlignment="Stretch" Name="btnNote" VerticalAlignment="Stretch"/>
+
+            <TextBlock Grid.Column="1" Background="Black" />
+                <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+        </Grid>
+
+    </Grid>    
+</Window>
