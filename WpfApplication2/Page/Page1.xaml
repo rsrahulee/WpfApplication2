@@ -6,8 +6,52 @@
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
 	Title="Page1">
+   
+        <Grid VerticalAlignment="Center">
 
-    <Grid>
-        <Label Content="My First page" Height="Auto" Name="label1" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="0,0,20,0" FontSize="18.667"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderThickness="2" CornerRadius="0" Margin="40 30 300 30" Height="40" BorderBrush="Black">
+            <TextBlock  Name="riceType" Grid.Column="1" Text="Need Some Input from You..." FontWeight="SemiBold" FontSize="20" />
+        </Border>
+        <Border Grid.Row="1" BorderThickness="2" CornerRadius="0"  Margin="40 30 300 30" Height="40"  BorderBrush="Black">
+            <TextBlock Name="riceVariety" Grid.Column="1" Text="Need Some Input from You..." FontWeight="SemiBold" FontSize="20" />
+        </Border>
+        <Border Grid.Row="2" BorderThickness="2" CornerRadius="0" Margin="40 30 300 30" Height="40"  BorderBrush="Black">
+            <TextBlock Name="preprocessing" Grid.Column="1" Text="Need Some Input from You..." FontWeight="SemiBold" FontSize="20" />
+        </Border>
+        <Border  Grid.Row="3" BorderThickness="2" CornerRadius="0" Margin="40 30 300 30" Height="40" BorderBrush="Black">
+            <TextBlock Name="capacity" Grid.Column="1" Text="Need Some Input from You..." FontWeight="SemiBold" FontSize="20" />
+        </Border>
+
+        <Button Style="{StaticResource blackGradient}" Grid.Row="4" Focusable="False" Height="40" Content="Submit Details"  Margin="40 30 300 30" Name="button1"/>
+
+
+        <Popup x:Name="popup" HorizontalAlignment="Center" Opacity="0.8" VerticalAlignment="Center" IsOpen="False" Placement="MousePoint" Height="100" Width="200">
+            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2"  CornerRadius="3"  Margin="5">
+                <Grid VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Focusable="False" Content="Short Grain" HorizontalAlignment="Stretch" Name="button4" VerticalAlignment="Stretch" Margin="0 0 0 1" />
+                    <Button Grid.Row="1" Focusable="False" Content="Medium Grain" HorizontalAlignment="Stretch" Name="button2"  VerticalAlignment="Stretch"  Margin="0 0 0 1"/>
+                    <Button Grid.Row="2" Focusable="False" Content="Long Grain" HorizontalAlignment="Stretch" Name="button3"  VerticalAlignment="Stretch" />
+                    
+                    <Border Grid.Row="0" Style="{StaticResource WhiteGradien}"/>
+                    <Border Grid.Row="1" Style="{StaticResource WhiteGradien}"/>
+                    <Border Grid.Row="2" Style="{StaticResource WhiteGradien}"/>
+                    
+                </Grid>
+             </Border>
+        </Popup>
     </Grid>
 </Page>

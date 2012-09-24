@@ -16,7 +16,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.05*" />
             <RowDefinition Height="0.05*" />
-            <RowDefinition Height="0.05*" />
+            <RowDefinition Height="0.08*" />
             <RowDefinition Height="0.84*" />
             <RowDefinition Height="0.08*" />
         </Grid.RowDefinitions>
@@ -33,25 +33,17 @@
                 <ColumnDefinition Width=".2*" />
                 <ColumnDefinition Width=".2*" />               
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Mill" HorizontalAlignment="Stretch" Name="button1" VerticalAlignment="Stretch" />
-            <Button Grid.Column="1" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Technology" HorizontalAlignment="Stretch" Name="button2" VerticalAlignment="Stretch" />
-            <Button Grid.Column="2" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Information" HorizontalAlignment="Stretch" Name="button3" VerticalAlignment="Stretch" />
-            <Button Grid.Column="3" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Clintele" HorizontalAlignment="Stretch" Name="button4" VerticalAlignment="Stretch" />
+            <Button Style="{StaticResource blackGradient}" Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Mill" HorizontalAlignment="Stretch" Name="button1" VerticalAlignment="Stretch" />
+            <Button Style="{StaticResource blackGradient}" Grid.Column="1" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Technology" HorizontalAlignment="Stretch" Name="button2" VerticalAlignment="Stretch" />
+            <Button Style="{StaticResource blackGradient}" Grid.Column="2" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Information" HorizontalAlignment="Stretch" Name="button3" VerticalAlignment="Stretch" />
+            <Button Style="{StaticResource blackGradient}" Grid.Column="3" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page2.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Clintele" HorizontalAlignment="Stretch" Name="button4" VerticalAlignment="Stretch" />
+            <Button Style="{StaticResource blackGradient}" Grid.Column="4" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Support" HorizontalAlignment="Stretch" Name="button5" VerticalAlignment="Stretch" />
 
-            <Button  Grid.Column="4" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Support" HorizontalAlignment="Stretch" Name="button5" VerticalAlignment="Stretch" >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                            <GradientStop Color="#FF000000" Offset="1"/>
-                            <GradientStop Color="#FFFFFFFF"/>
-                        </LinearGradientBrush>
-                    </Button.Background>           
-                </Button>
-
-            <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
-            <Border Grid.Column="1" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
-            <Border Grid.Column="2" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
-            <Border Grid.Column="3" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
-            <Border Grid.Column="4" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="0" Style="{StaticResource blackPlainBorder}"/>
+            <Border Grid.Column="1" Style="{StaticResource blackPlainBorder}"/>
+            <Border Grid.Column="2" Style="{StaticResource blackPlainBorder}"/>
+            <Border Grid.Column="3" Style="{StaticResource blackPlainBorder}"/>
+            <Border Grid.Column="4" Style="{StaticResource blackPlainBorder}"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -59,34 +51,19 @@
                 <ColumnDefinition Width=".2*" />
                 <ColumnDefinition Width=".8*" />
             </Grid.ColumnDefinitions>
-            <Border  Grid.Column="0" BorderThickness="1" CornerRadius="3,3,0,0" Margin="5,5,0,0" BorderBrush="Black">
-                <TextBlock Grid.Column="0">
-                <TextBlock.Background>
-                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                         <GradientStop Color="#FFFFFFFF" Offset="1"/>
-                         <GradientStop Color="#FF000000"/>
-                     </LinearGradientBrush>
-                </TextBlock.Background>
-            </TextBlock>
+            <Border  Grid.Column="0" BorderThickness="2" CornerRadius="3,3,0,0" Margin="5,5,0,0" BorderBrush="Black">
+                <TextBlock Grid.Column="0" Text="ABC Rice Mill" Style="{StaticResource textBlockBlackGradient}" FontSize="18" FontWeight="Bold" TextAlignment="Center"/>
             </Border>
-            <Border  Grid.Column="1" BorderThickness="1" CornerRadius="3,3,0,0" Margin="0,5,5,0" BorderBrush="Black">
-            <TextBlock Grid.Column="1">
-                 
-               <TextBlock.Background>
-                  <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                      <GradientStop Color="#FFFFFFFF" Offset="1"/>
-                         <GradientStop Color="#FF000000"/>
-                   </LinearGradientBrush>
-               </TextBlock.Background>
-                 
-            </TextBlock>
+            <Border  Grid.Column="1" BorderThickness="2" CornerRadius="3,3,0,0" Margin="0,5,5,0" BorderBrush="Black">
+                <TextBlock Grid.Column="1" Text="Need Some Input from You..." Style="{StaticResource textBlockBlackGradient}" FontWeight="SemiBold" FontSize="16" />                
             </Border>
-           
+            <Button Grid.Column="1" Height="30" Name="BackButton" HorizontalAlignment="Right" Width="60" Margin="0 12 25 5" VerticalAlignment="Center">
+                <Image Source="/WpfApplication2;component/Images/back.jpg" Height="30" Width="60"/>
+            </Button>
         </Grid>
 
         <Border Grid.Row="3" Margin="5 0 5 5">
-            <Grid  >
-           
+            <Grid  >           
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".2*" />
                     <ColumnDefinition Width=".8*" />
@@ -102,9 +79,8 @@
                     <Grid Grid.Column="1">                       
                         <Frame NavigationUIVisibility="Hidden" Name="frmContent" Source="Page/Page1.xaml" />
                     </Grid>
-                </Border>
-           
-        </Grid>
+                </Border>           
+            </Grid>
         </Border>
         
         <Grid Grid.Row="4">
@@ -112,10 +88,9 @@
                 <ColumnDefinition Width=".2*" />
                 <ColumnDefinition Width=".8*" />
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Quick Notes" HorizontalAlignment="Stretch" Name="btnNote" VerticalAlignment="Stretch"/>
-
+            <Button Style="{StaticResource blackGradient}" Grid.Column="0" Focusable="False" Command="NavigationCommands.GoToPage" CommandParameter="Page/Page1.xaml" CommandTarget="{Binding ElementName=frmContent}" Content="Quick Notes" HorizontalAlignment="Stretch" Name="btnNote" VerticalAlignment="Stretch"/>
             <TextBlock Grid.Column="1" Background="Black" />
-                <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+            <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
         </Grid>
 
     </Grid>    
