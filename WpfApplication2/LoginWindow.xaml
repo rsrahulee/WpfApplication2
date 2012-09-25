@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApplication2.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" Height="600" Width="800"
+        WindowStyle = "ThreeDBorderWindow"
+        WindowState = "Maximized">
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.07*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="0.08*" />
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="Top" Grid.Row="0">
+            <Image Source="/WpfApplication2;component/Images/Chrysanthemum.jpg" Height="30" Name="image1" Stretch="Fill" HorizontalAlignment="Left" Margin="20,0,0,0" Width="139" DataContext="{Binding}" />
+            <Label Content="SR Sales" Height="Auto" Name="label1" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" Margin="0,0,20,0" FontSize="18.667"/>            
+        </Grid>
+
+        <Border Grid.Row="1" BorderBrush="White" BorderThickness="2" CornerRadius="0" >
+            <Grid VerticalAlignment="Stretch" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1.75*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+          
+            <TextBlock Grid.Row="0" Text="Please enter some details before we move forword"   Height="40" FontSize="20" FontWeight="Bold" TextAlignment="Center" Foreground="White"/>
+          
+            <Border Grid.Row="1" BorderThickness="2" CornerRadius="0"  Height="40"  BorderBrush="Black">
+                    <TextBox Name="txtName" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="600" FontWeight="SemiBold" FontSize="20" />                   
+                </Border>
+            <Border Grid.Row="2" BorderThickness="2" CornerRadius="0" Height="80"  BorderBrush="Black">
+                    <TextBox Name="txtEmail" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="600"  FontWeight="SemiBold" FontSize="20"  TextWrapping="Wrap" AcceptsReturn="True"/>
+            </Border>
+            <Border  Grid.Row="3" BorderThickness="2" CornerRadius="0" Height="150" BorderBrush="Black">
+                    <TextBox Name="txtDesc" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="600"  FontWeight="SemiBold" FontSize="20" TextWrapping="Wrap" AcceptsReturn="True"/>
+            </Border>
+
+                <Button Style="{StaticResource blackGradient}" Grid.Row="4" Focusable="False" Height="40"  Width="600" Content="Done" FontWeight="Bold" FontSize="20" Margin="0 30 0 30" Name="button1" Click="button1_Click_1" />
+        </Grid>
+      </Border>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".8*" />
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource blackGradient}" Grid.Column="0" Focusable="False" Content="Quick Notes" HorizontalAlignment="Stretch" Name="btnNote" VerticalAlignment="Stretch"/>
+            <TextBlock Grid.Column="1" Background="Black" />
+            <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black"/>
+        </Grid>
+    </Grid>
+</Window>
